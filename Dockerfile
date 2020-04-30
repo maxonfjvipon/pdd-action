@@ -4,7 +4,8 @@ LABEL "repository"="https://github.com/g4s8/pdd-action"
 LABEL "maintainer"="Kirill Che."
 
 # install pdd
-RUN mkdir /tmp/apk.cache && \
+RUN apk add --update --no-cache ruby && \
+  mkdir /tmp/apk.cache && \
   apk add -U -t .pdd-deps --cache-dir=/tmp/apk.cache \
     "build-base" "ruby-dev" \
     "libxml2-dev" "libxslt-dev" && \
