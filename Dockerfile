@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.13
 
 LABEL "repository"="https://github.com/g4s8/pdd-action"
 LABEL "maintainer"="Kirill Che."
