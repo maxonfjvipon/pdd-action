@@ -12,6 +12,7 @@ RUN apk add --update --no-cache ruby xz-libs && \
   gem install --no-document bundle && \
   bundle config build.nokogiri --use-system-libraries && \
   gem install --no-document json && \
+  apt-get install -y libmagic-dev && \
   gem install --no-document pdd && \
   apk del .pdd-deps && \
   rm -fr /tmp/apk.cache
