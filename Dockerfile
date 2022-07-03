@@ -8,11 +8,10 @@ RUN apk add --update --no-cache ruby xz-libs && \
   mkdir /tmp/apk.cache && \
   apk add -U -t .pdd-deps --cache-dir=/tmp/apk.cache \
     "build-base" "ruby-dev" \
-    "libxml2-dev" "libxslt-dev" && \
+    "libxml2-dev" "libxslt-dev" "libmagic-dev" && \
   gem install --no-document bundle && \
   bundle config build.nokogiri --use-system-libraries && \
   gem install --no-document json && \
-  apt-get install -y libmagic-dev && \
   gem install --no-document pdd && \
   apk del .pdd-deps && \
   rm -fr /tmp/apk.cache
